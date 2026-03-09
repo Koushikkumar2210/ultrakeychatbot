@@ -1,0 +1,7 @@
+{
+  "name": "UltraKey Chatbot",
+  "description": "A sophisticated, real-time chatbot for UltraKey IT Solutions, featuring verified Google Maps grounding for exact locations.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
