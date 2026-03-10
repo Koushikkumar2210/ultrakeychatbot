@@ -90,7 +90,7 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({ onReset, onOpenKnowledge, isOnl
 
         <div className="flex flex-col">
           <div className="flex items-center space-x-2">
-            <h1 className="text-white font-black text-sm title-font tracking-tight uppercase">
+            <h1 className="text-white font-black text-sm tracking-tight uppercase">
               UltraKey <span className={`transition-all duration-700 ${hasKnowledge && isOnline ? 'text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]' : 'text-indigo-400'}`}>Core</span>
             </h1>
             {hasKnowledge && isOnline && (

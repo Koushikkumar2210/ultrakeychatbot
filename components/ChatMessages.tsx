@@ -7,8 +7,6 @@ interface ChatMessagesProps {
   messages: Message[];
   onChipClick: (text: string) => void;
   isOpen: boolean;
-  botAvatar: string | null;
-  onFeedback?: (id: string, feedback: 'positive' | 'negative') => void;
 }
 
 const SERVICE_BOXES = [
@@ -20,9 +18,10 @@ const SERVICE_BOXES = [
   { label: "Ad Systems", icon: "💰", color: "from-yellow-500", text: "I want to run Google Ads." },
   { label: "Accountancy", icon: "⚖️", color: "from-slate-500", text: "I need Chartered Accountant (CA) services." },
   { label: "Mobile Apps", icon: "🚀", color: "from-emerald-500", text: "Tell me about Mobile App Development." },
+  { label: "Our Location", icon: "📍", color: "from-red-500", text: "Where is your office located?" },
 ];
 
-const ChatMessages: React.FC<ChatMessagesProps> = ({ messages, onChipClick, isOpen, botAvatar, onFeedback }) => {
+const ChatMessages: React.FC<ChatMessagesProps> = ({ messages, onChipClick, isOpen }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const endRef = useRef<HTMLDivElement>(null);
 
@@ -86,7 +85,7 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({ messages, onChipClick, isOp
               </svg>
             </div>
           </div>
-          <h3 className="text-white font-black text-2xl title-font mb-4 tracking-tight">How can we help?</h3>
+          <h3 className="text-white font-black text-2xl mb-4 tracking-tight">How can we help?</h3>
           <p className="text-white/50 text-xs font-medium max-w-[280px] leading-relaxed mb-2">
             The UltraKey Neural Core is online and ready to assist you.
           </p>
@@ -97,7 +96,7 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({ messages, onChipClick, isOp
       )}
 
       {!isEmpty && messages.map((msg) => (
-        <ChatBubble key={msg.id} message={msg} botAvatar={botAvatar} onFeedback={onFeedback} />
+        <ChatBubble key={msg.id} message={msg} />
       ))}
 
       {showServices && (
@@ -108,7 +107,7 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({ messages, onChipClick, isOp
              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-white/10"></div>
           </div>
           
-          <div className="grid grid-cols-2 gap-3 w-full max-w-[400px]">
+          <div className="grid grid-cols-3 gap-3 w-full max-w-[400px]">
             {SERVICE_BOXES.map((box, i) => (
               <button
                 key={i}

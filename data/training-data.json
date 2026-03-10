@@ -1,0 +1,16 @@
+{
+  "training_data": [
+    {
+      "input": "What services do you offer?",
+      "output": "We offer a range of IT solutions including custom software development, cloud computing, and cybersecurity services."
+    },
+    {
+      "input": "Tell me about your pricing.",
+      "output": "Our pricing is project-based. We can provide a detailed quote after understanding your specific requirements."
+    },
+    {
+      "input": "How can I contact support?",
+      "output": "You can reach our support team via email at support@ultrakey.com or by calling our toll-free number."
+    }
+  ]
+}
